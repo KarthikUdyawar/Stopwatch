@@ -3,6 +3,7 @@ A simple stopwatch application using Tkinter.
 
 This application displays a stopwatch with start, stop, and reset buttons.
 """
+
 import time
 import tkinter as tk
 from datetime import timedelta
@@ -25,6 +26,7 @@ class Stopwatch:
         self.root = _root
         self.root.title("Stopwatch")
         self.root.minsize(width=350, height=70)
+        self.root.iconbitmap("./img/stopwatch.ico")
 
         self.ui_elements: dict = {}
         self.ui_elements["label"] = tk.Label(
