@@ -4,10 +4,23 @@ A simple stopwatch application using Tkinter.
 This application displays a stopwatch with start, stop, and reset buttons.
 """
 
+import os
+import sys
 import time
 import tkinter as tk
 from datetime import timedelta
 from tkinter import Tk
+
+
+def resource_path(relative_path: str) -> str:
+    """Get absolute path to resource, works for dev and for PyInstaller"""
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS  # pylint: disable=W0212,E1101
+    except Exception:  # pylint: disable=W0718
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
 
 
 class Stopwatch:
@@ -26,7 +39,7 @@ class Stopwatch:
         self.root = _root
         self.root.title("Stopwatch")
         self.root.minsize(width=350, height=70)
-        self.root.iconbitmap("./img/stopwatch.ico")
+        self.root.iconbitmap(resource_path("img\\stopwatch.ico"))
         self.root.resizable(False, False)
 
         self.ui_elements: dict = {}
