@@ -65,6 +65,17 @@ class Stopwatch:
         self.start_time: float = 0
         self.elapsed_time: timedelta = timedelta(seconds=0)
 
+        # Bind keyboard shortcuts
+        self.root.bind("<space>", lambda event: self.toggle_start_stop())
+        self.root.bind("<KeyPress-r>", lambda event: self.reset_timer())
+
+    def toggle_start_stop(self):
+        """Toggle between starting and stopping the stopwatch."""
+        if self.running:
+            self.stop_timer()
+        else:
+            self.start_timer()
+
     def start_timer(self):
         """Start the stopwatch."""
         if not self.running:
