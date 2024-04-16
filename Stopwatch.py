@@ -27,6 +27,7 @@ class Stopwatch:
         self.root.title("Stopwatch")
         self.root.minsize(width=350, height=70)
         self.root.iconbitmap("./img/stopwatch.ico")
+        self.root.resizable(False, False)
 
         self.ui_elements: dict = {}
         self.ui_elements["label"] = tk.Label(
