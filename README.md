@@ -46,6 +46,8 @@ Before you begin, ensure you have met the following requirements:
 
 ### Installation and run application
 
+There are two options:
+
 1. Clone the repository to your local machine:
 
     ```sh
@@ -63,6 +65,10 @@ Before you begin, ensure you have met the following requirements:
     ```sh
     python stopwatch.py
     ```
+
+OR
+
+- Download the executable file [Download link](https://github.com/KarthikUdyawar/Stopwatch/releases/tag/1.0.0)
 
 ## Usage
 
